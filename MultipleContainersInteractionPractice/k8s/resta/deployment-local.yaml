@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resta-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resta
+  template:
+    metadata:
+      labels:
+        app: resta
+    spec:
+      containers:
+      - name: resta
+        image: karencorona/resta-app:local
+        imagePullPolicy: Never  # Critical for local testing
+        ports:
+        - containerPort: 8000

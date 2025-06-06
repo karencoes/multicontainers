@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecuacion-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecuacion
+  template:
+    metadata:
+      labels:
+        app: ecuacion
+    spec:
+      containers:
+      - name: ecuacion
+        image: karencorona/ecuacion-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+        env:
+        - name: PORT
+          value: "8000"

@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  suma:
+    build: ./suma
+    ports:
+      - "8001:8000"
+    networks:
+      - shape-net
+
+  resta:
+    build: ./resta
+    ports:
+      - "8002:8000"
+    networks:
+      - shape-net
+
+  ecuacion:
+    build: ./ecuacion
+    ports:
+      - "8003:8000"
+    networks:
+      - shape-net
+    depends_on:
+      - suma
+      - resta
+
+networks:
+  shape-net:
+    driver: bridge
