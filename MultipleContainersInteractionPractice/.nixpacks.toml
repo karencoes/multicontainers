@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["nodejs-16.x"]
+
+[phases.build]
+commands = ["npm install"]
+
+[start]
+command = "npm start"
