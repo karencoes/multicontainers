@@ -1,0 +1,6 @@
+{
+  "build": {
+    "builder": "DOCKER",
+    "dockerfilePath": "ecuacion/Dockerfile"
+  }
+}
